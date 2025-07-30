@@ -1,8 +1,6 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 #nombre en la pestaña
 st.set_page_config(layout="centered", page_title="Dashboard",page_icon=":smile:")
@@ -47,13 +45,6 @@ with steps[1]:
     x = np.random.randn(100)
     y = np.random.randn(100)
     st.line_chart(pd.DataFrame({"x": x, "y": y}))
-    df=pd.read_csv("https://raw.githubusercontent.com/diplomado-bigdata-machinelearning-udea/Curso1/master/s03/dataVentas2009.csv")
-    df["Fecha"] = pd.to_datetime(df["Fecha"], format="%d/%m/%Y")
-    df.set_index("Fecha", inplace=True)
-    varx= st.selectbox("Escoge variable x", df.columns)
-    fig, ax = plt.subplots()
-    ax=sns.histplot(data=df, x=varx, kde=True, ax=ax)
-    st.pyplot(fig)
 
 with steps[2]:
     st.write("Mapas")
@@ -76,14 +67,4 @@ with steps[4]:
     else:
         st.write("No has seleccionado ningún elemento")
     st.selectbox("Selecciona una opción", ["Opción 1", "Opción 2", "Opción 3"])
-with steps[5]:
-    varx=st.selectbox("Escoge ID campaña", met_def["ID_Campana"].unique())
-    vary=st.selectbox("Escoge conversiones", met_def["Conversiones"])
-    fig,ax=plt.subplots()
-    ax=sns.scatterplot(data=met_def, x=varx, y=vary, hue="ID_Campana", style="Conversiones", ax=ax)
-    st.pyplot(fig)
 
-    df=pd.read_csv("https://raw.githubusercontent.com/diplomado-bigdata-machinelearning-udea/Curso1/master/s03/dataVentas2009.csv")
-    df["Fecha"] = pd.to_datetime(df["Fecha"],format="%d/%m/%Y")
-    df.set_index("Fecha", inplace=True)
-    st.table(df)
