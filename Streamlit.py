@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-import matplotlib as plot
+import matplotlib.pyplot as plot
 import seaborn as sns
 
 #nombre en la pestaña
