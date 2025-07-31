@@ -21,7 +21,7 @@ with steps[0]:
     df=pd.DataFrame(data)
     st.table(df)
     st.dataframe(df)
-    camp_df=pd.read_csv("campanhas.csv",encoding="latin-1", sep=";")
+    camp_df=pd.read_csv("Campanhas.csv",encoding="latin-1", sep=";")
     camp=st.selectbox("Selecciona una campaña", (camp_df["ID_Campana"]), help="muestra las campañas existentes")
     met_def=pd.read_csv("Metricas.csv", encoding="latin-1", sep=";")
     st.dataframe(met_def)
