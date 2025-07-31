@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import matplotlib as plot
-impor seaborn as sns
+import seaborn as sns
 
 #nombre en la pestaña
 st.set_page_config(layout="centered", page_title="Dashboard",page_icon=":smile:")
